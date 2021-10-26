@@ -130,6 +130,26 @@ class Person{
   }
 }
 ```
+### Propertype in CLASS
 
+Sim existe propertype em classes assim como nas funções  e são  definidas  de uma forma similar:
+Usando:
+`Object.defineProperty(Person.proportype, 'firstName', {enumerable: true});` // usado da mesma forma com outros Proportype
 
+### Inheritance(Heranca) in CLASS 
+
+ Para realizar as herancas nas CLASS é necessário  apenas EXTENDS;
+ ```JavaScript 
+ class Students extends Person {
+  contructor(firstName, lastName, age){
+   super(firstName, lastName, age);
+   this.enrolledCourses = [];
+  }
+  enroll(curseId) {
+   this.enrolledCouses.push(courseId);
+  }
+  getCourses(){
+   return this.fullName + " está cursando:" + this.enrolledCouses.join(", ");
+ } 
+```
 
