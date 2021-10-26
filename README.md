@@ -76,8 +76,60 @@ person.fullName = 'Fred Jones'; // isso muda o nome completo e o firts and last 
 ### Prototypes and Inheritance(Heranca)
 
 Prototype é um objeto que esta em todas as funções  de JavaScript. É usado como um protótipo  quando a função  é usado como um contrutor de objectos. Quando se muda um prototype todos objetos que usam essa Function Prototype iram mudar também `Person.prototype.age = 30 todos objetos teram 30 anos.
+Porém se editar apenas diretamente o `jim.age = 18` pela Inheritance apenas o jim tera 18, e tambem tera agora sua propria property AGE.
 
+Em um cadeia/corrente de Inheritance é necessário criar 3 linhas:
+Dentro da função: `Person.call(this, firstNAme, lastName, age)`// para trazer as infos de Person para Student
+Fora da função : `Students.prototype = Objects.create(Person.prototype);`
+                 `Students.prototype.constructor = Student;`
 
+## Classes:
+A classe é similar a uma Function Contructer, sua estrutura é dada como:
+
+```JavaScript 
+class Person{
+  contructor(firstName, lastName, age){
+   this.firstName = firstName;
+   this.lastName = lastName;
+   this.age = age;
+  }
+}
+let jimPerson = new Person('Jim', 'Cooper', 29); // cria um objeto apartir da class
+```
+
+### Creating GET and SET in CLASS
+
+```JavaScript 
+class Person{
+  contructor(firstName, lastName, age){
+   this.firstName = firstName;
+   this.lastName = lastName;
+   this.age = age;
+  }
+  get fullName {
+    return this.name.first + ' ' + this.name.last;
+  }
+  set fullName {
+    var nameParts = values.split(' ');
+    this.name.first = nameParts[0];
+    this.name.last = nameParts[1];
+  }
+}
+```
+### Add Functions in CLASS
+
+```JavaScript 
+class Person{
+  contructor(firstName, lastName, age){
+   this.firstName = firstName;
+   this.lastName = lastName;
+   this.age = age;
+  }
+  isAdult(){
+  returno this.age >= 18;
+  }
+}
+```
 
 
 
